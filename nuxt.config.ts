@@ -50,7 +50,10 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    /*
+    extend (config, ctx) {}
+     */
   },
   buildModules: ['@nuxt/typescript-build'],
   styleResources: {
@@ -58,5 +61,9 @@ export default {
       '~/assets/stylesheets/foundation/variables.scss',
       '~/assets/stylesheets/foundation/colors.scss'
     ]
+  },
+  typescript: {
+    typeCheck: true,
+    ignoreNotFoundWarnings: true
   }
 }
