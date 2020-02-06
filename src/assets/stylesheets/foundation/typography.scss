@@ -1,0 +1,32 @@
+$font-size-default: 3vw;
+$font-size-default--is-small-up: 18px;
+
+html {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: $black-087;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-size: $font-size-default;
+  line-height: 1.8;
+
+  @media screen and (min-width: $layout-breakpoint--is-small-up) {
+    font-size: $font-size-default--is-small-up;
+  }
+}
+
+p + p {
+  margin-top: 2em;
+}
