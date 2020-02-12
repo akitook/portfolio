@@ -5,17 +5,17 @@
     "description": "FacebookをフォトブックにできるWebサービス「ハピログ」のサイト設計、デザイン、WordPressのテーマ開発を担当しました。",
     "link": "https://happylogue.com/",
     "role": ["Planning", "Design", "Coding", "WordPress"],
-    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress", "VCCW"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress", "VCCW", "EC2"],
     "images": 3,
     "date": "2019-04-25"
   },
   "posto_jp": {
     "id": "posto_jp",
     "title": "posto.jp",
-    "description": "FacebookをフォトブックにできるWebサービス「ハピログ」のサイト設計、デザイン、WordPressのテーマ開発を担当しました。",
+    "description": "観光地で記念ポストカードを作れるサービス「posto.jp」のサイト設計、デザイン（web/ポストカード）、開発を担当しました。",
     "link": "https://biz.posto.jp/",
     "role": ["Planning", "Design", "Coding", "Programming"],
-    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "React", "Next.js", "wkhtmltopdf"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "React", "Next.js"],
     "images": 3,
     "date": "2019-04-25"
   },
@@ -28,6 +28,16 @@
     "tag": ["HTML", "SCSS", "Javascript", "Vue", "Nuxt.js", "WordPress"],
     "images": 5,
     "date": "2018-11-20"
+  },
+  "cards_hauer_jp": {
+    "id": "cards_hauer_jp",
+    "title": "cards",
+    "description": "Web上で手書きのメッセージカードを送り合うことができるサービス「cards」を制作しました。",
+    "link": "https://cards.hauer.jp/",
+    "role": ["Planning", "Design", "Coding", "Programming"],
+    "tag": ["HTML", "SCSS", "Javascript", "Vue", "Nuxt.js", "Firebase"],
+    "images": 1,
+    "date": "2019-02-14"
   },
   "kakidashi_hauer_jp": {
     "id": "kakidashi_hauer_jp",
