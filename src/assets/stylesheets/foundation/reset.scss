@@ -48,3 +48,12 @@ button {
     border: 0;
   }
 }
+
+:focus {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  margin: 0 auto;
+}
