@@ -1,67 +1,21 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        portfolio
-      </h1>
-      <h2 class="subtitle">
-        My portfolio
-      </h2>
-      <div class="links">
-        <a href="https://nuxtjs.org/" target="_blank" class="button--green"
-          >Documentation</a
-        >
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-          >GitHub</a
-        >
-      </div>
-    </div>
-  </div>
+  <main class="home">
+    <MainVisual />
+    <ArticlesSection />
+  </main>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
-import Logo from '~/components/Logo.vue'
-
+import MainVisual from '~/components/organisms/MainVisual.vue'
+import ArticlesSection from '~/components/organisms/ArticlesSection'
 @Component({
   components: {
-    Logo
+    MainVisual,
+    ArticlesSection
   }
 })
 export default class Index extends Vue {}
 </script>
 
-<style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-</style>
+<style lang="scss" scoped></style>

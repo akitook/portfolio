@@ -1,0 +1,63 @@
+{
+  "happylogue_com": {
+    "id": "happylogue_com",
+    "title": "happylogue.com",
+    "description": "FacebookをフォトブックにできるWebサービス「ハピログ」のサイト設計、デザイン、WordPressのテーマ開発を担当しました。",
+    "link": "https://happylogue.com/",
+    "role": ["Planning", "Design", "Coding", "WordPress"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress", "VCCW"],
+    "images": 3,
+    "date": "2019-04-25"
+  },
+  "posto_jp": {
+    "id": "posto_jp",
+    "title": "posto.jp",
+    "description": "FacebookをフォトブックにできるWebサービス「ハピログ」のサイト設計、デザイン、WordPressのテーマ開発を担当しました。",
+    "link": "https://biz.posto.jp/",
+    "role": ["Planning", "Design", "Coding", "Programming"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "React", "Next.js", "wkhtmltopdf"],
+    "images": 3,
+    "date": "2019-04-25"
+  },
+  "himi-iju_net": {
+    "id": "himi-iju_net",
+    "title": "氷見市 IJU 応援センター・みらいエンジン",
+    "description": "富山県氷見市の移住定住支援のための交流拠点「氷見市IJU（移住）応援センター（愛称：みらいエンジン）」のサイト設計、デザインを担当しました。",
+    "link": "https://himi-iju.net",
+    "role": ["Planning", "Design", "Coding", "Programming"],
+    "tag": ["HTML", "SCSS", "Javascript", "Vue", "Nuxt.js", "WordPress"],
+    "images": 5,
+    "date": "2018-11-20"
+  },
+  "kakidashi_hauer_jp": {
+    "id": "kakidashi_hauer_jp",
+    "title": "ほんのかきだし",
+    "description": "小説の最初の1文を投稿・共有できるサービス「ほんのかきだし」の制作をしました。",
+    "link": "https://kakidashi.hauer.jp/",
+    "role": ["Planning", "Design", "Coding", "Programming"],
+    "tag": ["HTML", "SCSS", "Javascript", "Vue", "Nuxt.js", "Firebase"],
+    "images": 5,
+    "date": "2018-12-05"
+  },
+  "one-netbook_jp": {
+    "id": "one-netbook_jp",
+    "title": "One Netbookストア",
+    "description": "OneMixシリーズをはじめとしたUMPC（ウルトラモバイルPC）を販売するECサイト「One Netbookストア」を制作しました。",
+    "link": "https://one-netbook.jp/",
+    "role": ["Planning", "Design", "Coding", "WordPress"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress"],
+    "images": 4,
+    "date": "2019-02-14"
+  },
+  "tech-1_jp": {
+    "id": "tech-1_jp",
+    "title": "株式会社テックワン",
+    "description": "One-Netbook社日本正規代理店である株式会社テックワンのコーポレートサイトを制作しました。",
+    "link": "https://one-netbook.jp/",
+    "role": ["Planning", "Design", "Coding", "WordPress"],
+    "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress"],
+    "images": 3,
+    "date": "2019-02-14"
+  }
+}
+
