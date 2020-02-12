@@ -8,7 +8,7 @@ import EventBus from '~/utils/event-bus'
 
 export default class Shape {
   constructor() {
-    this.segments = 80
+    this.segments = 100
     this.init()
   }
 
@@ -36,7 +36,7 @@ export default class Shape {
     })
 
     this.mesh = new THREE.Mesh(this.geometry, this.material)
-    this.mesh.rotation.x = Math.PI / 4
+    this.mesh.rotation.x = Math.PI / 2
     Common.scene.add(this.mesh)
   }
 
@@ -46,11 +46,11 @@ export default class Shape {
         this.transitionTarget.set(1, 0, 0, 0)
         break
 
-      case 'about':
+      case 'works-id':
         this.transitionTarget.set(0, 1, 0, 0)
         break
 
-      case 'contact':
+      case 'about':
         this.transitionTarget.set(0, 0, 1, 0)
         break
 

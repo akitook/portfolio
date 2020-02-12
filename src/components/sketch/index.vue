@@ -14,17 +14,18 @@ import EventBus from '~/utils/event-bus'
 })
 export default class Index extends Vue {
   @Prop({ default: null })
-  artwork: null
-
   mounted() {
-    this.artwork = new SketchGL({
-      $canvas: this.$refs.canvas
-    })
+    if (!this.sketch)
+      this.sketch = new SketchGL({
+        $canvas: this.$refs.canvas
+      })
+    EventBus.$emit('TRANSITION', this.$route.name)
   }
 
   destroyed() {}
   @Watch('$route.name')
   onRouteChanged(_new, _old) {
+    console.log('change')
     EventBus.$emit('TRANSITION', _new)
   }
 }
