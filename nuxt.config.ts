@@ -6,6 +6,9 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || '',
+    htmlAttrs: {
+      lang: 'ja'
+    },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -24,7 +27,7 @@ export default {
   /*
    ** Global CSS
    */
-  css: ['~/assets/stylesheets/main.scss'],
+  css: ['normalize.css/normalize.css', '~/assets/stylesheets/main.scss'],
   /*
    ** Plugins to load before mounting the App
    */
@@ -47,13 +50,11 @@ export default {
    ** Build configuration
    */
   build: {
-    /*
-     ** You can extend webpack config here
-     */
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    /*
-    extend (config, ctx) {}
-     */
+    extend (config: { module: { rules: { test: RegExp; use: string[]; }[]; }; }, ctx: any) {
+      if (!!config.module) {
+        config.module.rules.push({ test: /\.(vert|frag)$/i, use: ["raw-loader"] });
+      }
+    }
   },
   buildModules: ['@nuxt/typescript-build'],
   styleResources: {

@@ -1,6 +1,6 @@
 # portfolio
 
-> My portfolio
+
 
 ## Build Setup
 
@@ -19,4 +19,15 @@ $ npm start
 $ npm run generate
 ```
 
-For detailed explanation on how things work, checkout [Nuxt.js docs](https://nuxtjs.org).
+## CSS（SCSS）設計
+基本的にはBEM（MindBEMding）。
+
+ただしバリエーションやパターン違いについてはBEMのModifier、一時的な状態変化（stateの変化）はSMACSSのStateを用いる
+``` bash
+.global-menu {}
+.global-menu__content {}
+.global-menu__content--primary {}
+.global-menu__content.is-open {}
+
+
+```
