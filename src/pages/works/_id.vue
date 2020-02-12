@@ -48,7 +48,8 @@ export default class Index extends Vue {
   padding: $page-container-padding;
 }
 .information {
-  margin-bottom: 4vw;
+  padding: 4vw 0;
+  border-top: 1px solid $black-026;
 }
 h1 {
   font-size: 4vw;
@@ -81,7 +82,7 @@ p {
   }
   h1 {
     font-size: 20px;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
   }
   h2 {
     font-size: 16px;
@@ -109,7 +110,8 @@ p {
   }
   .information {
     max-width: 300px;
-    padding-right: 30px;
+    padding-top: 24px;
+    margin-right: 30px;
   }
   .visual {
     max-width: calc(#{$page-container-max-width} - 360px);
