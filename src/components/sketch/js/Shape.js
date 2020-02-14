@@ -8,7 +8,7 @@ import EventBus from '~/utils/event-bus'
 
 export default class Shape {
   constructor() {
-    this.segments = 100
+    this.segments = 60
     this.init()
   }
 
@@ -31,8 +31,8 @@ export default class Shape {
       vertexShader,
       fragmentShader,
       flatShading: true,
-      side: THREE.DoubleSide
-      // wireframe: true
+      side: THREE.FrontSide,
+      wireframe: true
     })
 
     this.mesh = new THREE.Mesh(this.geometry, this.material)
@@ -43,14 +43,17 @@ export default class Shape {
   onTransition(path) {
     switch (path) {
       case 'index':
+      case 1:
         this.transitionTarget.set(1, 0, 0, 0)
         break
 
       case 'works-id':
+      case 2:
         this.transitionTarget.set(0, 1, 0, 0)
         break
 
       case 'about':
+      case 3:
         this.transitionTarget.set(0, 0, 1, 0)
         break
 
@@ -117,8 +120,8 @@ export default class Shape {
   }
 
   update() {
-    this.mesh.rotation.y += Common.time.delta
-    const easing = Math.min(1.0, 3.5 * Common.time.delta)
+    this.mesh.rotation.y += Common.time.delta * 0.8
+    const easing = Math.min(1.0, 1 * Common.time.delta)
     this.uniforms.uProgress.value.lerp(this.transitionTarget, easing)
   }
 }

@@ -49,5 +49,5 @@ void main(){
     color += dirColor;
 
 
-    gl_FragColor = vec4(color, 1.0);
+    gl_FragColor = vec4(0.860,0.849,0.841, 1.0);
 }
