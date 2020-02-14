@@ -4,7 +4,7 @@
     @click="onClick"
     type="button"
     class="button"
-    title="Open menu"
+    title="Close"
   >
     <span class="top" />
     <span class="bottom" />
@@ -29,16 +29,17 @@ export default class MouseStalker extends Vue {
 <style lang="scss" scoped>
 .button {
   position: relative;
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
   display: block;
   background: transparent;
+  z-index: 999;
   span {
     position: absolute;
     left: 50%;
     top: 50%;
     width: 25px;
-    height: 2px;
+    height: 1px;
     display: block;
     background: $black-087;
     margin-left: -12.5px;
@@ -71,39 +72,10 @@ export default class MouseStalker extends Vue {
     50% {
     }
     100% {
-      transform: translateY(-1px) rotate(45deg);
+      transform: translateY(-0.5px) rotate(45deg);
     }
   }
 }
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
-  .button {
-    width: 100px;
-    height: 100px;
-    span {
-      width: 50px;
-      margin-left: -25px;
-    }
-  }
-  @keyframes top {
-    0% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-    }
-    100% {
-      transform: translateY(0px) rotate(-45deg);
-    }
-  }
-
-  @keyframes bottom {
-    0% {
-      transform: translateY(0px) rotate(0deg);
-    }
-    50% {
-    }
-    100% {
-      transform: translateY(-1px) rotate(45deg);
-    }
-  }
 }
 </style>
