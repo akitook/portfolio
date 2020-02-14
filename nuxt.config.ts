@@ -1,11 +1,20 @@
+const works = require('./src/assets/json/works.json')
+const worksKey = Object.keys(works)
 export default {
-  mode: 'universal',
+  mode: 'spa',
   srcDir: 'src/',
+  generate: {
+    routes() {
+      return worksKey.map(work => {
+        return `works/${work}`
+      })
+    }
+  },
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: 'Akito Okubo | 大久保 明翔',
     htmlAttrs: {
       lang: 'ja'
     },
@@ -15,15 +24,40 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        content: 'I\'m a front-end engineer / web designer working in Kanazawa.'
+      },
+      {
+        hid: 'og:url',
+        property: 'og:url',
+        content: 'https://akitookubo.com'
+      },
+      {
+        hid: 'og:title',
+        property: 'og:title',
+        content: 'Akito Okubo | 大久保 明翔',
+      },
+      {
+        hid: 'og:description',
+        property: 'og:description',
+        content: 'I\'m a front-end engineer / web designer working in Kanazawa.'
+      },
+      {
+        hid: 'og:image',
+        property: 'og:image',
+        content: "https://akitookubo.com/ogp.png"
+      },
+      {
+        hid: 'og:type',
+        property: 'og:type',
+        content: 'website'
+      },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: '#eee' },
   /*
    ** Global CSS
    */
