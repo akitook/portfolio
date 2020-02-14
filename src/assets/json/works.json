@@ -68,6 +68,16 @@
     "tag": ["HTML", "SCSS", "Javascript", "gulp.js", "WordPress"],
     "images": 3,
     "date": "2019-02-14"
+  },
+  "waverrr": {
+    "id": "waverrr",
+    "title": "waverrr",
+    "description": "二択の質問を投稿できるWebサービス「waverrr」を制作しました。",
+    "link": "https://choice.hauer.jp/",
+    "role": ["Planning", "Design", "Coding", "Programming"],
+    "tag": ["HTML", "SCSS", "Javascript", "Vue", "Nuxt.js", "Firebase"],
+    "images": 1,
+    "date": "2018-04-01"
   }
 }
 
