@@ -24,7 +24,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: 'I\'m a front-end engineer / web designer working in Kanazawa.'
+        content: "I'm a front-end engineer / web designer working in Kanazawa."
       },
       {
         hid: 'og:url',
@@ -34,25 +34,38 @@ export default {
       {
         hid: 'og:title',
         property: 'og:title',
-        content: 'Akito Okubo | 大久保 明翔',
+        content: 'Akito Okubo | 大久保 明翔'
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: 'I\'m a front-end engineer / web designer working in Kanazawa.'
+        content: "I'm a front-end engineer / web designer working in Kanazawa."
       },
       {
         hid: 'og:image',
         property: 'og:image',
-        content: "https://akitookubo.com/ogp.png"
+        content: 'https://akitookubo.com/ogp.jpg'
       },
       {
         hid: 'og:type',
         property: 'og:type',
         content: 'website'
-      },
+      }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'apple-touch-icon',
+        sizes: '180x180',
+        href: '/apple-touch-icon-180x180.png'
+      },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        sizes: '192x192',
+        href: '/android-chrome-192x192.png'
+      }
+    ]
   },
   /*
    ** Customize the progress-bar color
@@ -84,9 +97,15 @@ export default {
    ** Build configuration
    */
   build: {
-    extend (config: { module: { rules: { test: RegExp; use: string[]; }[]; }; }, ctx: any) {
+    extend(
+      config: { module: { rules: { test: RegExp; use: string[] }[] } },
+      ctx: any
+    ) {
       if (!!config.module) {
-        config.module.rules.push({ test: /\.(vert|frag)$/i, use: ["raw-loader"] });
+        config.module.rules.push({
+          test: /\.(vert|frag)$/i,
+          use: ['raw-loader']
+        })
       }
     }
   },
