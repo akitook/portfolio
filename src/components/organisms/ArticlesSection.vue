@@ -20,13 +20,28 @@
       >
         Private
       </li>
+      <!--
       <li
         @click="clickFilter('sketch')"
         :class="{ 'is-active': activeFilter === 'sketch' }"
       >
         Sketch
       </li>
-      <li @click="changeLayout">layout</li>
+      -->
+      <li @click="changeLayout" class="grid-button">
+        <img
+          v-if="isGrid"
+          src="~/assets/images/onegrid.svg"
+          class="grid-icon"
+          alt="icon"
+        />
+        <img
+          v-else
+          src="~/assets/images/twogrid.svg"
+          class="grid-icon"
+          alt="icon"
+        />
+      </li>
     </ul>
     <Articles :data="filterData" :is-grid="isGrid" />
   </section>
@@ -95,7 +110,19 @@ h1 {
     }
   }
 }
+.grid-button {
+  display: none;
+  margin-left: auto;
+  line-height: 1;
+}
+.grid-icon {
+  width: 24px;
+  height: 24px;
+}
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .grid-button {
+    display: block;
+  }
 }
 
 @media screen and (min-width: $layout-breakpoint--is-medium-up) {

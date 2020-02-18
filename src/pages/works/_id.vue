@@ -2,8 +2,9 @@
   <main class="work">
     <div class="work__container">
       <div class="information">
-        <CloseButton :is-show="isShow" @click="onClick" class="close-button" />
+        <CloseButton @click="onClick" class="close-button" />
         <div class="information__container">
+          <p>{{ data.category }}</p>
           <h1>{{ data.title }}</h1>
           <p class="description">{{ data.description }}</p>
           <h2>role</h2>
@@ -71,10 +72,6 @@ export default class Index extends Vue {
 
   private onClick() {
     this.$router.push('/')
-  }
-
-  get isShow() {
-    return this.$route.name === 'works-id'
   }
 
   get prevLink() {

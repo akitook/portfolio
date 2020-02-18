@@ -21,15 +21,14 @@ export default class Index extends Vue {}
 <style lang="scss" scoped>
 .header {
   width: 100%;
-  position: fixed;
-  top: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  position: relative;
   margin: 0 auto;
-  z-index: 2;
 }
 .menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
   ul {
     display: flex;
     justify-content: flex-end;

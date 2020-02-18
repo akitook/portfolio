@@ -16,7 +16,7 @@ import { Component, Emit, Prop, Vue } from 'nuxt-property-decorator'
 
 @Component
 export default class MouseStalker extends Vue {
-  @Prop({ default: false })
+  @Prop({ default: true })
   isShow!: boolean
 
   @Emit('click')

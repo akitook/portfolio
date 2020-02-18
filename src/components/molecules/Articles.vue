@@ -45,9 +45,12 @@ export default class Index extends Vue {
   backface-visibility: hidden;
   transform-origin: 50% 50%;
   &-move {
+    transition: all 400ms ease-out;
+  }
+  &-enter-active {
     transition: all 300ms ease-out;
   }
-  &-leave-action {
+  &-leave-active {
     transition: all 400ms ease-in;
     position: absolute;
     z-index: 0;

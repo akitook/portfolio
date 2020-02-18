@@ -2,7 +2,7 @@
   <main class="work">
     <div class="work__container">
       <div class="information">
-        <CloseButton :is-show="isShow" @click="onClick" class="close-button" />
+        <CloseButton @click="onClick" class="close-button" />
         <div class="information__container">
           <h1>{{ data.title }}</h1>
           <p class="description">{{ data.description }}</p>
@@ -62,6 +62,7 @@ export default class Index extends Vue {
     const { params } = context
     const id: string = await params.id
     return {
+      projectData,
       data: projectData[id],
       keys: Object.keys(projectData),
       index: Object.keys(projectData).indexOf(id)
@@ -72,20 +73,16 @@ export default class Index extends Vue {
     this.$router.push('/')
   }
 
-  get isShow() {
-    return this.$route.name === 'works-id'
-  }
-
   get prevLink() {
     if (this.index === 0) return ''
     const prevId = this.keys[this.index - 1]
-    return `/works/${prevId}`
+    return `/${projectData[prevId].category}/${prevId}`
   }
 
   get nextLink() {
     if (this.index === this.keys.length - 1) return ''
     const nextId = this.keys[this.index + 1]
-    return `/works/${nextId}`
+    return `/${projectData[nextId].category}/${nextId}`
   }
 }
 </script>
