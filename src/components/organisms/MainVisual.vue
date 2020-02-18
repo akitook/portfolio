@@ -10,25 +10,34 @@
         <GlitchText text="working in Kanazawa." width="400" />
       </p>
     </div>
+    <ScrollArrow :class="{ 'is-scroll': scrollY > 0 }" class="scroll-arrow" />
   </section>
 </template>
 
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator'
 import GlitchText from '~/components/atoms/GlitchText'
+import ScrollArrow from '~/components/atoms/ScrollArrow'
+
 @Component({
-  components: { GlitchText }
+  components: { GlitchText, ScrollArrow }
 })
 export default class Index extends Vue {
-  private isOpen: boolean = false
-  public onClick() {
-    this.isOpen = !this.isOpen
+  scrollY: number = 0
+
+  mounted() {
+    window.addEventListener('scroll', this.handleScroll)
+  }
+
+  handleScroll() {
+    this.scrollY = window.scrollY
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .main-visual {
+  position: relative;
   width: 100%;
   height: 100vh;
   padding: $page-container-padding;
@@ -43,6 +52,17 @@ h1 {
 p {
   font-style: italic;
   font-weight: bold;
+}
+.scroll-arrow {
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 1;
+  transition: opacity 0.5s;
+  &.is-scroll {
+    opacity: 0;
+  }
 }
 @media screen and (min-width: $layout-breakpoint--is-small-up) {
   h1 {
