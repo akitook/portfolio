@@ -8,7 +8,7 @@ import EventBus from '~/utils/event-bus'
 
 export default class Shape {
   constructor() {
-    this.segments = 60
+    this.segments = 40
     this.init()
   }
 
