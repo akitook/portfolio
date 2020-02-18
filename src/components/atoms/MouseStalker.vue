@@ -27,6 +27,7 @@ export default class MouseStalker extends Vue {
 
 <style lang="scss" scoped>
 .mouse-stalker {
+  display: none;
   pointer-events: none;
   position: fixed;
   top: -1vw;
@@ -38,5 +39,10 @@ export default class MouseStalker extends Vue {
   transform: translate(0, 0);
   transition: transform 0.4s;
   transition-timing-function: ease-out;
+}
+@media screen and (min-width: $layout-breakpoint--is-small-up) {
+  .mouse-stalker {
+    display: block;
+  }
 }
 </style>
