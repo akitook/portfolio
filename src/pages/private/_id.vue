@@ -62,7 +62,6 @@ export default class Index extends Vue {
     const { params } = context
     const id: string = await params.id
     return {
-      projectData,
       data: projectData[id],
       keys: Object.keys(projectData),
       index: Object.keys(projectData).indexOf(id)
@@ -80,13 +79,13 @@ export default class Index extends Vue {
   get prevLink() {
     if (this.index === 0) return ''
     const prevId = this.keys[this.index - 1]
-    return `/${projectData[prevId].category}/${prevId}`
+    return `/works/${prevId}`
   }
 
   get nextLink() {
     if (this.index === this.keys.length - 1) return ''
     const nextId = this.keys[this.index + 1]
-    return `/${projectData[nextId].category}/${nextId}`
+    return `/works/${nextId}`
   }
 }
 </script>

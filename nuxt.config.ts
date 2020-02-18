@@ -1,12 +1,13 @@
-const works = require('./src/assets/json/works.json')
-const worksKey = Object.keys(works)
+const projects = require('./src/assets/json/projects.json')
+const projectsKey = Object.keys(projects)
+const projectArray = projectsKey.map(k => projects[k])
 export default {
   mode: 'spa',
   srcDir: 'src/',
   generate: {
     routes() {
-      return worksKey.map(work => {
-        return `works/${work}`
+      return projectArray.map(project => {
+        return `${project.category}/${project.id}`
       })
     }
   },

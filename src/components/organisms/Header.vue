@@ -27,7 +27,7 @@ export default class Index extends Vue {}
   justify-content: flex-end;
   align-items: center;
   margin: 0 auto;
-  z-index: 999;
+  z-index: 2;
 }
 .menu {
   ul {

@@ -47,7 +47,6 @@ class Common {
   }
 
   setSize() {
-    console.log(window)
     this.size = {
       windowW: window.innerWidth,
       windowH: window.innerHeight
