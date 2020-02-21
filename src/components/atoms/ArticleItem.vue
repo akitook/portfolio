@@ -1,9 +1,6 @@
 <template>
   <nuxt-link :to="`/${data.category}/${data.id}`">
-    <img
-      :src="require(`~/assets/images/projects/${data.id}/1@2x.jpg`)"
-      :alt="data.title"
-    />
+    <img :src="data.thumbnail[0].url" :alt="data.title" />
     <h2>{{ data.title }}</h2>
     <p>{{ data.role.join(', ') }}</p>
   </nuxt-link>

@@ -48,20 +48,22 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue } from 'nuxt-property-decorator'
-import projectData from '~/assets/json/projects.json'
+import { Component, Prop, Vue } from 'nuxt-property-decorator'
 import Articles from '~/components/molecules/Articles'
 @Component({
   components: { Articles }
 })
 export default class Index extends Vue {
-  filterData: object = projectData
+  @Prop({ default: {} })
+  data!: Object
+
+  filterData: object = this.data
   activeFilter: string = 'all'
   isGrid: boolean = false
   clickFilter(filterName) {
     this.activeFilter = filterName
     if (filterName !== 'all') {
-      const projectArray = Object.keys(projectData).map(k => projectData[k])
+      const projectArray = Object.keys(this.data).map(k => this.data[k])
       const filtering = projectArray.filter(project => {
         return project.category === filterName
       })
@@ -70,7 +72,7 @@ export default class Index extends Vue {
         {}
       )
     } else {
-      this.filterData = projectData
+      this.filterData = this.data
     }
   }
 

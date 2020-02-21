@@ -1,16 +1,9 @@
-const projects = require('./src/assets/json/projects.json')
-const projectsKey = Object.keys(projects)
-const projectArray = projectsKey.map(k => projects[k])
+require("dotenv").config();
+
 export default {
+  dev: process.env.NODE_ENV !== 'production',
   mode: 'spa',
   srcDir: 'src/',
-  generate: {
-    routes() {
-      return projectArray.map(project => {
-        return `${project.category}/${project.id}`
-      })
-    }
-  },
   /*
    ** Headers of the page
    */
@@ -79,16 +72,26 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
+  plugins: [
+  ],
   /*
    ** Nuxt.js modules
    */
   modules: [
+    '@nuxtjs/dotenv',
     '@nuxtjs/pwa',
     '@nuxtjs/eslint-module',
     '@nuxtjs/style-resources',
-    'nuxt-webfontloader'
+    '@nuxtjs/axios',
+    'nuxt-webfontloader',
+    '~/modules/api'
   ],
+  /*
+   ** ルートにある.envファイルを読み込む
+   */
+  dotenv: {
+    path: process.cwd()
+  },
   webfontloader: {
     google: {
       families: ['Noto+Sans+JP']

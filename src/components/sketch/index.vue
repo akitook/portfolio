@@ -25,7 +25,6 @@ export default class Index extends Vue {
   destroyed() {}
   @Watch('$route.name')
   onRouteChanged(_new, _old) {
-    console.log('change')
     EventBus.$emit('TRANSITION', _new)
   }
 }

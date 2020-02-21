@@ -6,11 +6,11 @@
         <div class="information__container">
           <p>{{ data.category }}</p>
           <h1>{{ data.title }}</h1>
-          <p class="description">{{ data.description }}</p>
+          <p class="description">{{ data.summary }}</p>
           <h2>role</h2>
           <p class="list">{{ data.role.join(', ') }}</p>
           <h2>tags</h2>
-          <p class="list">{{ data.tag.join(', ') }}</p>
+          <p class="list">{{ data.tags.join(', ') }}</p>
           <h2>link</h2>
           <p>
             <a :href="data.link" target="_blank">{{ data.link }}</a>
@@ -26,11 +26,14 @@
         </div>
       </div>
       <div class="visual">
-        <div v-for="n of data.images" class="image">
+        <div class="image">
           <img
-            :src="require(`~/assets/images/projects/${data.id}/${n}@2x.jpg`)"
-            :alt="`${data.title}_${n}`"
+            :src="data.thumbnail[0].url"
+            :alt="`${data.title}'s thumbnail`"
           />
+        </div>
+        <div v-for="n of data.imageDeck" class="image">
+          <img :src="n.image[0].url" :alt="n.caption" />
         </div>
       </div>
     </div>
@@ -40,7 +43,6 @@
 <script lang="ts">
 import { Context } from '@nuxt/types'
 import { Component, Vue } from 'nuxt-property-decorator'
-import projectData from '~/assets/json/projects.json'
 import CloseButton from '~/components/atoms/CloseButton'
 @Component({
   components: {
@@ -49,6 +51,7 @@ import CloseButton from '~/components/atoms/CloseButton'
 })
 export default class Index extends Vue {
   transition: 'page'
+  projectData: object = {}
   data: object = {}
   keys: Array = []
   index: number = 0
@@ -60,13 +63,25 @@ export default class Index extends Vue {
   }
 
   async asyncData(context: Context): Promise<> {
-    const { params } = context
+    const { app, params } = context
     const id: string = await params.id
-    return {
-      projectData,
-      data: projectData[id],
-      keys: Object.keys(projectData),
-      index: Object.keys(projectData).indexOf(id)
+    const url =
+      process.env.NODE_ENV === 'development' ? '' : process.env.BASE_URL
+    try {
+      const fetchData = await app.$axios.get(`${url}/_nuxt/json/project.json`)
+      return {
+        projectData: fetchData.data,
+        data: fetchData.data[id],
+        keys: Object.keys(fetchData.data),
+        index: Object.keys(fetchData.data).indexOf(id)
+      }
+    } catch (err) {
+      return {
+        projectData: {},
+        data: {},
+        keys: [],
+        index: null
+      }
     }
   }
 
@@ -77,13 +92,13 @@ export default class Index extends Vue {
   get prevLink() {
     if (this.index === 0) return ''
     const prevId = this.keys[this.index - 1]
-    return `/${projectData[prevId].category}/${prevId}`
+    return `/${this.projectData[prevId].category}/${prevId}`
   }
 
   get nextLink() {
     if (this.index === this.keys.length - 1) return ''
     const nextId = this.keys[this.index + 1]
-    return `/${projectData[nextId].category}/${nextId}`
+    return `/${this.projectData[nextId].category}/${nextId}`
   }
 }
 </script>
